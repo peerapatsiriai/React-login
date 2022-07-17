@@ -26,7 +26,7 @@ export default function SignInSide() {
         password:data.get('password')
     }
 
-    fetch('http://localhost:8000/api/login', {
+    fetch('https://react-login-api.vercel.app/api/login', {
         method:'POST',
         headers:{
             'Content-Type':'application/json',
@@ -52,7 +52,7 @@ export default function SignInSide() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    fetch('http://localhost:8000/api/auth', {
+    fetch('https://react-login-api.vercel.app/api/auth', {
         method:'POST',
         headers:{
             'Content-Type':'application/json',

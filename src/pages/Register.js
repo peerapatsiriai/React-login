@@ -22,7 +22,7 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     
-    axios.post('http://localhost:8000/api/register', {
+    axios.post('https://react-login-api.vercel.app/api/register', {
       email:data.get('email'),
       password:data.get('password')
     })
