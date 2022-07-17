@@ -24,7 +24,7 @@ const theme = createTheme();
 export default function Album() { 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    fetch('http://localhost:8000/api/auth', {
+    fetch('https://react-login-api.vercel.app/api/auth', {
         method:'POST',
         headers:{
             'Content-Type':'application/json',
