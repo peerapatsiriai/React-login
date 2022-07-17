@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Swal from 'sweetalert2'
 
 
 
@@ -33,12 +34,18 @@ export default function Album() {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      
       if(data.status === 'decoded') {
         console.log('ok');
       }else{
-        window.location = '/'
+        Swal.fire({
+          icon: 'error',
+          title: 'You Not Login',
+        }).then(() => {
+          window.location = '/'
+        })
       }
+
     })
     .catch((err) => {
       console.log(err);
